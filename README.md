@@ -1,5 +1,7 @@
 # RevenueLens - Sales Performance and Business Decision Intelligence Platform
 
+🚀 **[Live Demo](https://revenuelens-trx83iz6rjrq9lcjdlh5jd.streamlit.app/)** | 💻 **[GitHub Source Code](https://github.com/SHREYASHREEN/RevenueLens)**
+
 A portfolio project: an interactive sales analytics app with SQL-backed KPIs, targets, rule-based insights, a safe
 read-only SQL explorer and report exports. **All data is synthetic** (generated with a fixed random seed) - it is not real
 company data. Prototype only: not deployed and not production-ready.
