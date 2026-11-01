@@ -1,4 +1,5 @@
 """Create demo users, load the synthetic dataset and generate SAMPLE targets (all fictional)."""
+import sqlite3
 import random
 from . import auth, config, datagen, db, loader, targets
 
@@ -8,10 +9,30 @@ DEMO_USERS = [("admin", "Demo Admin", "RL-Admin@123", "Admin"),
 
 
 def seed_users(conn):
-    for u, n, pw, role in DEMO_USERS:
-        if not conn.execute("SELECT 1 FROM users WHERE username=?", (u,)).fetchone():
-            auth.create_user(conn, u, n, pw, role)
+    for username, full_name, password, role in DEMO_USERS:
+        existing = conn.execute(
+            "SELECT 1 FROM users WHERE username = ?",
+            (username,)
+        ).fetchone()
 
+        if existing:
+            continue
+
+        try:
+            auth.create_user(
+                conn,
+                username,
+                full_name,
+                password,
+                role
+            )
+        except sqlite3.IntegrityError:
+            # Another startup process may have created this user.
+            if not conn.execute(
+                "SELECT 1 FROM users WHERE username = ?",
+                (username,)
+            ).fetchone():
+                raise
 
 def seed_transactions(conn, replace=False):
     if not replace and conn.execute("SELECT COUNT(*) FROM transactions").fetchone()[0] > 0:
