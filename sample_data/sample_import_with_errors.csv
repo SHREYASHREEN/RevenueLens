@@ -1,0 +1,10 @@
+order_id,order_date,product,category,region,channel,quantity,unit_price,discount,unit_cost,customer_segment,status
+NEW-001,2026-07-01,Aero Laptop 14,Electronics,North,Online,1,62000,0.10,48000,Consumer,Completed
+NEW-002,05/07/2026,Fresh Blend Coffee 1kg,Grocery,South,Retail Store,3,950,0,665,,Completed
+NEW-002,2026-07-05,Duplicate id in file,Grocery,South,Retail Store,1,950,0,665,Consumer,Completed
+NEW-003,not-a-date,Orbit Smartwatch,Electronics,East,Online,1,12500,0.05,8750,Consumer,Completed
+NEW-004,2026-07-06,Merino Jacket,Apparel,West,Online,0,9800,0.05,5684,Consumer,Completed
+NEW-005,2026-07-06,Merino Jacket,Apparel,West,Online,1,9800,1.5,5684,Consumer,Completed
+NEW-006,2026-07-07,Cloud Sofa 3-Seat,Furniture,Central,Direct Sales,1,42000,0.05,30240,Enterprise,Pending
+NEW-007,2026-07-07,Rain Shell,Apparel,,Online,1,5200,0.05,2860,Consumer,Completed
+ORD-000300,2026-07-08,Existing id in database,Grocery,West,Direct Sales,2,621.71,0.05,353.87,Enterprise,Completed
